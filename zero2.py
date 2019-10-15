@@ -962,7 +962,7 @@ def lineBot(op):
                             cl.sendMessage(to, str(ret_))
                         except Exception as e:
                             cl.sendMessage(msg.to, str(e))
-                    if text.lower() == 'help':
+                    if text.lower() == '功能':
                             helpMessage = helpmessage()
                             cl.sendMessage(to, str(helpMessage))
                             cl.sendMessage(to, "我的作者")
