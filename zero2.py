@@ -604,6 +604,10 @@ def lineBot(op):
                                     start = time.time()
                                     for cancelmod in gInviMids:
                                         cl.cancelGroupInvitation(msg.to, [cancelmod])
+					kl.cancelGroupInvitation(msg.to, [cancelmod])
+					sb.cancelGroupInvitation(msg.to, [cancelmod])
+					kt.cancelGroupInvitation(msg.to, [cancelmod])
+					sa.cancelGroupInvitation(msg.to, [cancelmod])
                                     elapsed_time = time.time() - start
                                     cl.sendMessage(to, "已取消完成\n取消時間: %s秒" % (elapsed_time))
                                     cl.sendMessage(to, "取消人數:" + sinvitee)
