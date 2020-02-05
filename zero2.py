@@ -9,7 +9,7 @@ from gtts import gTTS
 from googletrans import Translator
 
 botStart = time.time()
-cl = LINE("ENAUCoYXYM7J3TUPMIma.cqpaTMb8mHjkbrr2El8xQG.qWbeeK3trpLwu6SPFyp8PuFccu3xWNHWFrAPRrIs4u8=")
+cl = LINE("ENz9HiWP1GMdlXqC0Rk9.ru9aiTYvoAL9lAzQ+siEUq.z1l2LQtM2j9YC0sfeQWuytEzDcJ+CTOens+mikqRyJQ=")
 cl.log("Auth Token : " + str(cl.authToken))
 print ("====機器壹登入成功====")
 kl = LINE("ENdXtxVovmSYGL0Pcsm2.Hqt3usa6GThPGq1W+eE7OG.9Dd2VZdcOZx+gw2/FWha3cHGAuHuXtpaHtXm0uchAqM=")
@@ -21,7 +21,7 @@ print ("====機器參登入成功====")
 kt = LINE("ENSKPQR2cCa1DovGZErc.89ygu6799+QVSkkKJ8FV+a.v12Sm8pri9GVG4c1nEWi3RRIplmkqqdzS5GWqITOyiE=")
 kt.log("Auth Token : " + str(kl.authToken))
 print ("====機器肆登入成功====")
-sa = LINE("ENz9HiWP1GMdlXqC0Rk9.ru9aiTYvoAL9lAzQ+siEUq.z1l2LQtM2j9YC0sfeQWuytEzDcJ+CTOens+mikqRyJQ=")
+sa = LINE("ENAUCoYXYM7J3TUPMIma.cqpaTMb8mHjkbrr2El8xQG.qWbeeK3trpLwu6SPFyp8PuFccu3xWNHWFrAPRrIs4u8=")
 sa.log("Auth Token : " + str(kl.authToken))
 print ("====機器伍登入成功====")
 
