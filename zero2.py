@@ -639,7 +639,7 @@ def lineBot(op):
                                     txt += u'@Alin \n'
                                 cl.sendMessage(to, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
                                 cl.sendMessage(to, "總共 {} 個成員".format(str(len(nama))))
-                                elif "踢 " in msg.text.lower():
+                        elif "踢 " in msg.text.lower():
                             if msg.toType == 2:
                                 prov = eval(msg.contentMetadata["MENTION"])["MENTIONEES"]
                                 allmid = []
