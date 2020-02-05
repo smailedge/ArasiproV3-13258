@@ -60,7 +60,7 @@ myProfile["statusMessage"] = clProfile.statusMessage
 myProfile["pictureStatus"] = clProfile.pictureStatus
 msg_dict = {}
 bl = [""]
-god = ['u39acb4cbdbd3fd43d50dbf97764f8d8c']
+god = ['ub6f9d53713c5869f0d78e71febe13837']
 
 #==========================================================================================#
 def cTime_to_datetime(unixtime):
@@ -98,7 +98,7 @@ def sendMessageWithMention(to, mid):
     except Exception as error:
         logError(error)
 def helpmessage():
-    helpMessage = """🔥   〘弑神 戰爭〙   🔥
+    helpMessage = """🔥   〘𝐹𝒶𝓃𝓉𝒶𝓈𝓎𝒮𝓉𝓊𝒹𝒾𝑜〙   🔥
 ========〘God指令〙========
 🔥 【rebot】重新開機
 🔥 【killban】踢出黑單
@@ -113,7 +113,7 @@ def helpmessage():
 🔥 【ban @】黑單某人
 🔥 【unban @】解除黑單某人
 🔥 【clearban】清空黑名單
-🔥 【yukino:bye】讓yukino退出群組
+🔥 【yukino:bye】讓主機退出群組
 🔥 【Fbc:】好友廣播
 🔥 【Gbc:】群組廣播
 🔥 【resetgroup】重新設定群組
@@ -174,7 +174,7 @@ def helpmessage():
 🔥 【sf】關閉已讀點
 🔥 【sr】更新已讀點
 🔥 【r】查看當前已讀
- ⇒Credits By.Arasi™⇐"""
+ ⇒Credits By.𝐹𝒶𝓃𝓉𝒶𝓈𝓎𝒮𝓉𝓊𝒹𝒾𝑜™⇐"""
     return helpMessage
 def lineBot(op):
     try:
@@ -186,8 +186,8 @@ def lineBot(op):
             if settings["autoAdd"] == True:
                 cl.findAndAddContactsByMid(op.param1)
                 cl.sendMessage(op.param1, "安安！{} 感謝您加我為好友！".format(str(contact.displayName)))
-                cl.sendMessage(op.param1, "咱是由Arasi所開發的ArasiproV3\n此機器為戰爭機器人如有需要!!!!\n對防翻機器有興趣者可以私以下友資購買")
-                cl.sendContact(op.param1, "u39acb4cbdbd3fd43d50dbf97764f8d8c")
+                cl.sendMessage(op.param1, "對防翻機器有興趣者可以私以下友資購買")
+                cl.sendContact(op.param1, "ub6f9d53713c5869f0d78e71febe13837")
         if op.type == 24:
             print ("[ 24 ] 通知離開副本")
             if settings["autoLeave"] == True:
@@ -218,8 +218,8 @@ def lineBot(op):
             if clMID in op.param3:
                 if settings["autoJoin"] == True:
                     cl.acceptGroupInvitation(op.param1)
-                    cl.sendMessage(op.param1, "歡迎使用由Arasi開發的ArasiproV3!!!\nMy creator:")
-                    cl.sendContact(op.param1, "u39acb4cbdbd3fd43d50dbf97764f8d8c")
+                    cl.sendMessage(op.param1, "My creator:")
+                    cl.sendContact(op.param1, "ub6f9d53713c5869f0d78e71febe13837")
                     if group.preventedJoinByTicket == True:
                         group.preventedJoinByTicket = False
                         cl.updateGroup(group)
@@ -245,7 +245,7 @@ def lineBot(op):
                             cl.sendContact(op.param1, GS)
                     except:
                         cl.sendMessage(op.param1, "[ERROR]\n設置GM權限失敗!!!!\n請尋找作者幫忙")
-                        cl.sendContact(op.param1, "u39acb4cbdbd3fd43d50dbf97764f8d8c")
+                        cl.sendContact(op.param1, "ub6f9d53713c5869f0d78e71febe13837")
             elif op.param1 not in settings["inviteprotect"]:
                 if op.param2 not in settings['admin'] and op.param2 not in settings['bot'] and op.param2 not in settings['gm'][op.param1]:
                     cl.sendMessage(op.param1, "群組邀請保護開啟中!!!!")
@@ -1005,7 +1005,7 @@ def lineBot(op):
                             helpMessage = helpmessage()
                             cl.sendMessage(to, str(helpMessage))
                             cl.sendMessage(to, "我的作者")
-                            cl.sendContact(to, "u39acb4cbdbd3fd43d50dbf97764f8d8c")
+                            cl.sendContact(to, "ub6f9d53713c5869f0d78e71febe13837")
                     elif text.lower() == 'test':
                         cl.sendMessage(to, "運行中......")
                         kl.sendMessage(to, "運行中......")
@@ -1069,7 +1069,7 @@ def lineBot(op):
                     elif text.lower() == 'about':
                         try:
                             arr = []
-                            owner = "u39acb4cbdbd3fd43d50dbf97764f8d8c"
+                            owner = "ub6f9d53713c5869f0d78e71febe13837"
                             creator = cl.getContact(owner)
                             contact = cl.getContact(clMID)
                             group = cl.getGroup(to)
