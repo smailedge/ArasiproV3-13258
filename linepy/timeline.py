@@ -33,6 +33,12 @@ class Timeline(Channel):
     """Timeline"""
 
     @loggedIn
+    def wait(self):
+        profile = None
+        _dict = {"ban":False, "unban":False, "getmid":False, "pic":False, "monmonpic":False, 'clp':False, "keepban":0, "keepunban":0, 'rapidFire':{}, 'bye':{}, 'gbc':{}, 'game':{}, 'stkRapid':{}, "unsend":{}, 'addimage':{"to":"","id":""}, 'readPoint':{}, 'readMember':{}, 'setTime':{}, 'ROM':{}, "msg_ddict":{}, "msg_dict":{}, "botStart":time.time(), "liked":[], 'displayName':self.getProfile().displayName, 'statusMessage':self.getProfile().statusMessage,'pictureStatus':profile ,'coverId':self.getProfileCoverId(self.profile.mid)}    #--------??
+        return _dict
+        
+    @loggedIn
     def getFeed(self, postLimit=10, commentLimit=1, likeLimit=1, order='TIME'):
         params = {'postLimit': postLimit, 'commentLimit': commentLimit, 'likeLimit': likeLimit, 'order': order}
         url = self.server.urlEncode(self.server.LINE_TIMELINE_API, '/v27/feed/list.json', params)

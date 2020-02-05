@@ -3,10 +3,10 @@ from akad.ttypes import ApplicationType
 import re
 
 class Config(object):
-    LINE_HOST_DOMAIN            = 'https://gd2.line.naver.jp'
+    LINE_HOST_DOMAIN            = 'https://gw.line.naver.jp'
     LINE_OBS_DOMAIN             = 'https://obs-sg.line-apps.com'
-    LINE_TIMELINE_API           = 'https://gd2.line.naver.jp/mh/api'
-    LINE_TIMELINE_MH            = 'https://gd2.line.naver.jp/mh'
+    LINE_TIMELINE_API           = 'https://gw.line.naver.jp/mh/api'
+    LINE_TIMELINE_MH            = 'https://gw.line.naver.jp/mh'
 
     LINE_LOGIN_QUERY_PATH       = '/api/v4p/rs'
     LINE_AUTH_QUERY_PATH        = '/api/v4/TalkService.do'
@@ -27,14 +27,14 @@ class Config(object):
         'LINE_SERVICES': '1459630796'
     }
 
-    APP_TYPE    = ApplicationType._VALUES_TO_NAMES[368]
-    APP_VER     = '2.1.5'
+    APP_TYPE    = "CHROMEOS\t2.1.0\tCHROMEOS\t10.0.0"
+    APP_VER     = '8.9.1'
     CARRIER     = '51089, 1-0'
-    SYSTEM_NAME = 'ARIFISTIFIK'
-    SYSTEM_VER  = '11.2.5'
+    SYSTEM_NAME = 'CHROMEOS'
+    SYSTEM_VER  = '10.12.0'
     IP_ADDR     = '8.8.8.8'
     EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
 
     def __init__(self):
-        self.APP_NAME = '%s\t%s\t%s\t%s' % (self.APP_TYPE, self.APP_VER, self.SYSTEM_NAME, self.SYSTEM_VER)
+        self.APP_NAME = 'CHROMEOS\t2.1.0\tCHROMEOS\t10.0.0'
         self.USER_AGENT = 'Line/%s' % self.APP_VER

@@ -13,6 +13,9 @@ class Callback(object):
         else:
             notice=''
         self.callback('Open this link ' + notice + 'on your LINE for smartphone in 2 minutes\n' + url)
+        f = open('linepy/url.txt','w')
+        f.write(str(url))
+        f.close()
         if showQr:
             try:
                 import pyqrcode

@@ -21,10 +21,15 @@ class LINE(Auth, Models, Talk, Square, Call, Timeline):
 
         self.__initAll()
 
+    """Call"""
+        
+    def acquireCallRoute(self, to):
+        return self._client.acquireCallRoute(to)
+        
     def __initAll(self):
 
         self.profile    = self.talk.getProfile()
-        self.groups     = self.talk.getGroupIdsJoined()
+#        self.groups     = self.talk.getGroupIdsJoined()
 
         Models.__init__(self)
         Talk.__init__(self)

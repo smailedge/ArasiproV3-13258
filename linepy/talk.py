@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from akad.ttypes import Message
+from akad.ttypes import Message, Location, IdentityProvider, LoginResultType, LoginRequest, LoginType
 from random import randint
 
 import json, ntpath
@@ -63,35 +63,6 @@ class Talk(object):
     """Message"""
 
     @loggedIn
-    def sendMention(self, to, text="", mids=[]):
-        arrData = ""
-        arr = []
-        mention = "@zeroxyuuki "
-        if mids == []:
-            raise Exception("Invalid mids")
-        if "@!" in text:
-            if text.count("@!") != len(mids):
-                raise Exception("Invalid mids")
-            texts = text.split("@!")
-            textx = ""
-            for mid in mids:
-                textx += str(texts[mids.index(mid)])
-                slen = len(textx)
-                elen = len(textx) + 15
-                arrData = {'S':str(slen), 'E':str(elen - 4), 'M':mid}
-                arr.append(arrData)
-                textx += mention
-            textx += str(texts[len(mids)])
-        else:
-            textx = ""
-            slen = len(textx)
-            elen = len(textx) + 15
-            arrData = {'S':str(slen), 'E':str(elen - 4), 'M':mids[0]}
-            arr.append(arrData)
-            textx += mention + str(text)
-        return self.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
-    
-    @loggedIn
     def sendMessage(self, to, text, contentMetadata={}, contentType=0):
         msg = Message()
         msg.to, msg._from = to, self.profile.mid
@@ -139,6 +110,35 @@ class Talk(object):
         contentMetadata={'MENTION':str('{"MENTIONEES":' + json.dumps(arr).replace(' ','') + '}')}
         return self.sendMessage(to, text, contentMetadata)
 
+    @loggedIn
+    def sendMention(self, to, text="", mids=[]):
+        arrData = ""
+        arr = []
+        mention = "@kazumiline "
+        if mids == []:
+            raise Exception("Invaliod mids")
+        if "@!" in text:
+            if text.count("@!") != len(mids):
+                raise Exception("Invalid mids")
+            texts = text.split("@!")
+            textx = ""
+            for mid in mids:
+                textx += str(texts[mids.index(mid)])
+                slen = len(textx)
+                elen = len(textx) + 15
+                arrData = {'S':str(slen), 'E':str(elen - 4), 'M':mid}
+                arr.append(arrData)
+                textx += mention
+                textx += str(texts[len(mids)])
+        else:
+            textx = ""
+            slen = len(textx)
+            elen = len(textx) + 15
+            arrData = {'S':str(slen), 'E':str(elen - 4), 'M':mids[0]}
+            arr.append(arrData)
+            textx += mention + str(text)
+        self.sendMessage(to, textx, {'AGENT_NAME':'kazumi', 'AGENT_LINK': 'line://ti/p/~{}'.format(self.profile.userid), 'AGENT_ICON': "http://dl.profile.line-cdn.net/" + self.profile.picturePath, 'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
+    
     @loggedIn
     def sendSticker(self, to, packageId, stickerId):
         contentMetadata = {
@@ -280,6 +280,9 @@ class Talk(object):
         return self.deleteFile(path)
 
     """Contact"""
+    @loggedIn
+    def deleteContact(self, mid):
+        return self.talk.updateContactSetting(16,mid,16,'True')
         
     @loggedIn
     def blockContact(self, mid):
