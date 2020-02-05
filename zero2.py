@@ -604,10 +604,10 @@ def lineBot(op):
                                     start = time.time()
                                     for cancelmod in gInviMids:
                                         cl.cancelGroupInvitation(msg.to, [cancelmod])
-					kl.cancelGroupInvitation(msg.to, [cancelmod])
-					sb.cancelGroupInvitation(msg.to, [cancelmod])
-					kt.cancelGroupInvitation(msg.to, [cancelmod])
-					sa.cancelGroupInvitation(msg.to, [cancelmod])
+                                        kl.cancelGroupInvitation(msg.to, [cancelmod])
+                                        sb.cancelGroupInvitation(msg.to, [cancelmod])
+                                        kt.cancelGroupInvitation(msg.to, [cancelmod])
+                                        sa.cancelGroupInvitation(msg.to, [cancelmod])
                                     elapsed_time = time.time() - start
                                     cl.sendMessage(to, "已取消完成\n取消時間: %s秒" % (elapsed_time))
                                     cl.sendMessage(to, "取消人數:" + sinvitee)
@@ -639,7 +639,7 @@ def lineBot(op):
                                     txt += u'@Alin \n'
                                 cl.sendMessage(to, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
                                 cl.sendMessage(to, "總共 {} 個成員".format(str(len(nama))))
-			elif "踢 " in msg.text.lower():
+                                elif "踢 " in msg.text.lower():
                             if msg.toType == 2:
                                 prov = eval(msg.contentMetadata["MENTION"])["MENTIONEES"]
                                 allmid = []
